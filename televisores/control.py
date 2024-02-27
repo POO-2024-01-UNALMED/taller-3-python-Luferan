@@ -2,8 +2,11 @@ from televisores.tv import TV
 class Control:
     def enlazar(self, tv:TV):
         self._tv = tv
-        tv.setControl(self)
-
+        self._tv.setControl(self)
+    def  getTv(self):
+        return self._tv
+    def setTv(self, tv:TV)-> None:
+        self._tv = tv
     def turnOn(self)-> None:
         self._tv.turnOn()
     def turnOff(self)-> None:
@@ -19,11 +22,10 @@ class Control:
     def volumenDown(self)-> None:
         self._tv.volumenDown()
 
-    def setCanal(self, canal:int)-> None:
-        self.tv.setCanal(canal)
+    def setCanal(self, canal:int):
+        self._tv.setCanal(canal)
 
-    def setVolumen(self, volumen:int)-> None:
-        self.tv.setVolumen(volumen)
+    def setVolumen(self, volumen:int):
+        self._tv.setVolumen(volumen)
 
-    def  getTv(self)-> TV:
-        return self._tv 
+    
